@@ -1,0 +1,28 @@
+.content-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content-card {
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.border-black {
+  border: 2px solid #000;
+}
+
+.type1 {
+  background-color: green;
+  color: white;
+}
+
+.type2 {
+  background-color: red;
+  color: white;
+}
+
+.highlight {
+  border: 2px solid blue;
+}

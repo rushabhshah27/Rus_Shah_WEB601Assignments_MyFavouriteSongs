@@ -1,0 +1,14 @@
+<input type="text" [(ngModel)]="searchTitle" placeholder="Enter a title">
+<button (click)="searchByTitle()">Search</button>
+<p [ngStyle]="{ color: searchResult ? 'green' : 'red' }">{{ searchMessage }}</p>
+
+<div *ngFor="let content of contents | contentTypeFilter: ''" [class.highlight]="content.title === searchTitle"></div>
+  
+<h2>Content with No Type</h2>
+<app-content-card *ngFor="let content of contents | contentTypeFilter:''" [content] = "content"></app-content-card>
+
+<h2>Content with Romantic Songs</h2>
+<app-content-card *ngFor="let content of contents | contentTypeFilter: 'Romantic'" [content] = "content"></app-content-card>
+
+<h2>Content with Pop Songs</h2>
+<app-content-card *ngFor="let content of contents | contentTypeFilter: 'Pop'" [content] = "content"></app-content-card>
