@@ -1,6 +1,8 @@
-<input type="text" [(ngModel)]="searchTitle" placeholder="Enter a title">
-<button (click)="searchByTitle()">Search</button>
-<p [ngStyle]="{ color: searchResult ? 'green' : 'red' }">{{ searchMessage }}</p>
+<div>
+    <input type="text" [(ngModel)]="searchTitle" placeholder="Enter a title">
+    <button (click)="searchByTitle()">Search</button>
+    <p [ngStyle]="{ color: searchResult ? 'green' : 'red' }">{{ searchMessage }}</p>
+</div>
 
 <div *ngFor="let content of contents | contentTypeFilter: ''" [class.highlight]="content.title === searchTitle"></div>
   

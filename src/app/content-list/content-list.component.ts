@@ -48,7 +48,8 @@ export class ContentListComponent {
       title: 'Chikni Chameli', 
       description: '"Chikni Chameli" is a song from the 2012 Indian Hindi action drama film Agneepath, directed by Karan Malhotra and produced by Karan Johar.', 
       creator: 'Karan Johar',
-      image: 'https://i.scdn.co/image/ab67616d0000b273d54393280e88a142bf31265f',
+      image: '',
+      // image: 'https://i.scdn.co/image/ab67616d0000b273d54393280e88a142bf31265f',
       tags: ['RomanticSong', 'KatrinaKaif'] 
     },
     { id: 6, 

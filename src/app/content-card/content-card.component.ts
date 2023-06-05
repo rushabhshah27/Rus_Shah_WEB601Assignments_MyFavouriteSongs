@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-// import { ContentList } from '../helper-files/content-list';
+import { HoverAffectDirective } from '../hover-affect.directive';
 
 
 @Component({
