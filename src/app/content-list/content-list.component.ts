@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-list',
@@ -12,7 +13,7 @@ export class ContentListComponent {
   searchResult: boolean = false; 
   searchMessage: string = '';
 
-  contents: any[] = [
+  contents: Content[] = [
     { id: 1, 
       title: 'Despacito', 
       description: 'It is a reggaeton and Latin pop song composed in common time with lyrics about desiring a relationship, performed in a smooth and romantic way.', 
@@ -82,4 +83,8 @@ export class ContentListComponent {
       : `Content with title "${this.searchTitle}" doesn't exist.`;
   }
 
+  addContent(newContent: Content) {
+    this.contents.push(newContent);
+    this.contents = [...this.contents]; 
+  }
 }
