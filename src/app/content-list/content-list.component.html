@@ -1,26 +1,37 @@
-<app-create-content (createContentEvent)="addContent($event)"></app-create-content>
+<main>
+    <section class="searchForTitle">
+        <div>
+            <input type="text" [(ngModel)]="searchTitle" placeholder="Search Title here...">
+            <button (click)="searchByTitle()">Search</button>
+        </div>
+        <div *ngIf="titleFound !== null">
+            <p [style.color]="titleFound ? 'green' : 'red'">
+                {{titleFound ? 'Song Exist' : 'Song Not Exist'}}
+            </p>
+        </div>
+    </section>
 
-<div>
-    <input type="text" [(ngModel)]="searchTitle" placeholder="Enter a title">
-    <button (click)="searchByTitle()">Search</button>
-    <p [ngStyle]="{ color: searchResult ? 'green' : 'red' }">{{ searchMessage }}</p>
-</div>
+    <h1>Songs with No Type</h1>
 
-<div *ngFor="let content of contents | contentTypeFilter: ''" [class.highlight]="content.title === searchTitle"></div>
-  
-<h2>Content with No Type</h2>
-<app-content-card   *ngFor="let content of contents | contentTypeFilter:''" [content] = "content"></app-content-card>
+    <section class="cards">
+        <div *ngFor="let content of contents | contentTypeFilter:''" hoverAffect="border">
+            <app-content-card [song]="content" [class]="''"></app-content-card>
+        </div>
+    </section>
 
-<h2>Content with Romantic Songs</h2>
-<app-content-card *ngFor="let content of contents | contentTypeFilter: 'Romantic'" [content] = "content"></app-content-card>
+    <h1>Romantic Songs</h1>
 
-<h2>Content with Pop Songs</h2>
-<app-content-card *ngFor="let content of contents | contentTypeFilter: 'Pop'" [content] = "content"></app-content-card>
+    <section class="cards">
+        <div *ngFor="let content of contents | contentTypeFilter:'Romantic'" hoverAffect="border">
+            <app-content-card [song]="content" [class]="'Romantic'"></app-content-card>
+        </div>
+    </section>
 
-<div *ngFor="let item of contents.slice(-1)" style="text-align: center; border: 5px solid #240c0c;">
-    <h1>{{item.id}}</h1>
-    <h2>{{ item.title }}</h2>
-    <h2>{{ item.description }}</h2>
-    <h2>{{ item.creator }}</h2>
-  
-  </div>
+    <h1>Pop Songs</h1>
+
+    <section class="cards">
+        <div *ngFor="let content of contents | contentTypeFilter:'Pop'" hoverAffect="border">
+            <app-content-card [song]="content" [class]="'Pop'"></app-content-card>
+        </div>
+    </section>
+</main>

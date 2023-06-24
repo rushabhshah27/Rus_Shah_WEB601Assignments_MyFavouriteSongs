@@ -1,3 +1,14 @@
-<h1>Welcome to {{ title }} App!</h1>
+<section class="songById-sec">
+    <div class="idForm" >
+        <form (submit)="findSongById()">
+            <label for="songId">Enter an ID:</label> <br>
+            <input type="number" min="0" id="songId" name="songId" [(ngModel)]="songId" placeholder="Enter an ID">
+            <button>Get Song</button>
+        </form>
+    </div>
+    <div class="oneCard">
+        <app-content-card [song]="oneSongById" [class]="'oneSong'"></app-content-card>
+    </div>
+</section>
 
 <app-content-list></app-content-list>

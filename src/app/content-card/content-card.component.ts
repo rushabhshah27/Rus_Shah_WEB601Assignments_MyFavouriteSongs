@@ -1,7 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
-import { HoverAffectDirective } from '../hover-affect.directive';
-
 
 @Component({
   selector: 'app-content-card',
@@ -9,5 +7,11 @@ import { HoverAffectDirective } from '../hover-affect.directive';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent {
-  @Input() content: Content;
+  @Input() song: any;
+  @Input() class: string = '';
+  defaultSong: string = '/assets/images/Song.jpg';
+
+  handleClick(content: Content){
+    console.log(`ID: ${content.id}, Title: ${content.title}`);
+  }
 }
