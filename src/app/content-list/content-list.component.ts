@@ -25,7 +25,7 @@ export class ContentListComponent {
   searchByTitle() {
     const matchingSong = this.contents.find(song => song.title.toLowerCase() === this.searchTitle.toLowerCase());
     const cardElements = document.querySelectorAll(`div.card`);
-    if(matchingSong){
+    if(matchingSong) {
       this.titleFound = true;
       cardElements.forEach(card => {
         if(parseInt(card.id) === matchingSong.id){
