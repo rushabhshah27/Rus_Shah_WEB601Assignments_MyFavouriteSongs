@@ -22,6 +22,14 @@ export class ContentListComponent {
     this.SongServiceService.getSongs().subscribe(songs => this.contents = songs );
   }
 
+  addNewSong(newSong: Content){
+    this.SongServiceService.addSong(newSong).subscribe(newSongFromServer => {
+      this.contents.push(newSongFromServer);
+      this.contents = [...this.contents];
+    });
+  }
+
+
   searchByTitle() {
     const matchingSong = this.contents.find(song => song.title.toLowerCase() === this.searchTitle.toLowerCase());
     const cardElements = document.querySelectorAll(`div.card`);
