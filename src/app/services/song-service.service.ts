@@ -28,14 +28,13 @@ export class SongServiceService {
   }
 
   getSongById(id: number): Observable<any> {
-    const song = contents.find(content => content.id === id);
+    const song = this.http.get<Content>(`api/songs/${id}`);
 
     if (song) {
       this.MessageService.add(`Content Item at id: ${id}`);
-      return of(song);
+      return song;
     }
     this.MessageService.add("Invalid Id");
     return of("Invalid Id");
   }
-
 }

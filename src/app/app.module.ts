@@ -11,6 +11,8 @@ import { HoverAffectDirective } from './hover-affect.directive';
 import { MessageComponent } from './message/message.component';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
 import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -33,7 +35,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     HoverAffectDirective,
     MessageComponent,
     ModifyContentComponent,
-    AddContentDialogComponent
+    AddContentDialogComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
-      delay: 1000
     }),
     BrowserAnimationsModule
   ],
